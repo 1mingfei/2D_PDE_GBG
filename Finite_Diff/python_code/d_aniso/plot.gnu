@@ -1,0 +1,10 @@
+set terminal postsc eps enhanced color font ",25"
+set output "1000.eps"
+
+set xlabel "x(nm)"
+set ylabel "z(nm)"
+set yrange [-1.5:0.5]
+set xrange [0:100]
+
+plot '1000.iso.out'  using ($1):($2) w l lw 4 smooth csplines title "iso 1.0s",\
+     '1000.ani.out'  using ($1):($2) w l lw 4 smooth csplines title "ani 1.0s",\
